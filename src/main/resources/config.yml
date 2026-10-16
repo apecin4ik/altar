@@ -1,0 +1,36 @@
+# ───────── Огненный алтарь ─────────
+world: grief-1
+timezone: Europe/Moscow
+spawn-time: "14:00"            # ежедневный автоспавн (по МСК)
+alerts-minutes: [120, 60, 30, 5, 1]   # оповещения до спавна
+
+# Где спавнить (X и Z случайно в диапазоне)
+spawn-min: -5000
+spawn-max: 5000
+flat-tolerance: 4              # макс. перепад высот под постройкой
+
+schematic: fire_cursed_blade_altar.schem   # лежит в plugins/AltarEvent/
+loot-file: loot.yml            # ваш исходный конфиг (лут НЕ меняется)
+loot-key: ""                   # пусто = первый раздел в inv: (inv37973)
+chest-local: [12, 36, 12]      # где ставить шалкер (координаты внутри схематики, от угла)
+decor-margin: 12               # радиус «мрачного» декора вокруг постройки
+
+# Тайминги (секунды)
+open-seconds: 300              # шалкер откроется через 5 минут
+max-duration-seconds: 1200     # ивент длится максимум 20 минут
+end-when-empty: true           # закончить через 10 сек после того, как лут разобрали
+protect-radius: 50             # защита от ломания/строительства/взрывов
+bossbar-radius: -1             # -1 = боссбар виден всем игрокам
+
+# Стражи
+guardians:
+  count: 2
+  type: WITHER_SKELETON
+  health: 80
+  damage: 6                    # урон до тотема
+  damage-no-totem: 8           # урон после потери тотема
+  health-after-totem: 40
+  speed: 0.32
+  leash-radius: 22             # дальше этого радиуса от центра алтаря не уходят
+  wither-effect: false         # эффект иссушения от удара скелета-иссушителя
+  xp: 150

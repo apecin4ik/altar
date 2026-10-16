@@ -1,0 +1,19 @@
+name: AltarEvent
+version: 1.0.0
+main: ru.altar.AltarPlugin
+api-version: '1.20'
+description: Ивент «Огненный алтарь»
+depend: [WorldEdit]
+commands:
+  altar:
+    description: Огненный алтарь
+    usage: /altar [start|stop|reload|tp]
+permissions:
+  altar.use:
+    default: true
+  altar.admin:
+    description: start / stop / reload / tp
+    default: op
+  altar.bypass:
+    description: ломать/ставить блоки в зоне алтаря
+    default: op
